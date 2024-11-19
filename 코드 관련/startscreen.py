@@ -5,6 +5,7 @@ import os
 pygame.init()
 
 WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
 
 # 화면 크기 
 screen_width = 1200
@@ -17,13 +18,13 @@ background_image = pygame.image.load("start.png")
 background_image = pygame.transform.scale(background_image, (screen_width, screen_height))
 
 # START버튼 위치,크기
-start_button = pygame.Rect(500, 500, 230, 60)
+start_button = pygame.Rect(320, 620, 230, 60)
 # EXIT버튼 위치, 크기
-exit_button = pygame.Rect(500, 600, 230, 60)
+exit_button = pygame.Rect(625, 620, 230, 60)
 
 font = pygame.font.Font(None, 36)
-start_text = font.render("  ", True, WHITE)
-exit_text = font.render("   ", True, WHITE)
+start_text = font.render(" ", True, WHITE)
+exit_text = font.render(" ", True, WHITE)
 
 def main_menu():
     while True:
@@ -44,7 +45,7 @@ def main_menu():
                     sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if start_button.collidepoint(event.pos):
-                    os.system("python main.py")
+                    os.system("python tutorial.py")
                 elif exit_button.collidepoint(event.pos):
                     pygame.quit()
                     sys.exit()
